@@ -29,7 +29,6 @@ namespace API.Gateway
 
             Routes = JsonHelper.Deserialize<List<Route>>(Convert.ToString(router.routes));
             AuthenticationService = JsonHelper.Deserialize<Destination>(Convert.ToString(router.authenticationService));
-
         }
 
         public async Task<HttpResponseMessage> RouteRequest(HttpRequest request)

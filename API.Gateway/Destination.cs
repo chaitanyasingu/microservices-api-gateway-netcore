@@ -60,6 +60,7 @@ namespace API.Gateway
             using (var newRequest = new HttpRequestMessage(new HttpMethod(request.Method), CreateDestinationUri(request)))
             {
                 newRequest.Content = new StringContent(requestContent, Encoding.UTF8, request.ContentType);
+                EventBus.Microservices.EventBus.Send("Customer.Product.get", Encoding.UTF8.GetBytes(requestContent));
                 var response = await client.SendAsync(newRequest);
                 return response;
                 

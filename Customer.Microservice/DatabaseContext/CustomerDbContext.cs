@@ -12,7 +12,7 @@ namespace Customer.Microservice.DatabaseContext
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
-            options.UseSqlServer("Data Source =DESKTOP-SB1FJH5;Initial Catalog=Customer.Microservice;Integrated Security = true;");
+            options.UseSqlServer("Data Source =DESKTOP-SB1FJH5\\SQLEXPRESS;Initial Catalog=Customer.Microservice;Integrated Security = true;");
         }
     }
 }
